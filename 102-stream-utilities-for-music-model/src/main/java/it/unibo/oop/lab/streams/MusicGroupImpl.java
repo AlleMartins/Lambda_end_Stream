@@ -82,7 +82,7 @@ public final class MusicGroupImpl implements MusicGroup {
                 .entrySet()
                 .stream()
                 .collect(Collectors.maxBy(Comparator.comparingDouble(java.util.Map.Entry::getValue)))
-                .flatMap(java.util.Map.Entry::getKey);
+                .map(java.util.Map.Entry::getKey).get();
     }
 
     private static final class Song {
